@@ -11,26 +11,30 @@ function Header() {
       if (window.scrollY > 0) {
         setIsScrolled(true);
       } else {
-        setIsScrolled(true);
+        setIsScrolled(false);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    return window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
     <header className={`${isScrolled && "bg-dark"}`}>
       <div className="flex items-center space-x-2 md:space-x-10">
-        {/*  eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={logo_src}
-          alt="netflix logo"
-          width={100}
-          height={100}
-          className="cursor-pointer object-contain"
-        />
+        <Link passHref href="/">
+          {/*  eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={logo_src}
+            alt="netflix logo"
+            width={100}
+            height={100}
+            className="cursor-pointer object-contain"
+          />
+        </Link>
         <ul className="hidden space-x-4 md:flex">
           {menuOptions.map((option, index) => (
             <li
