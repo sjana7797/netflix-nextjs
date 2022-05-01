@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-dark text-neutral-200 !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-red-600;
+    @apply bg-dark font-nunito text-neutral-200 !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-red-600;
   }
 
   header {

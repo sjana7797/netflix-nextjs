@@ -36,7 +36,7 @@ const Home = ({
     setBannerMovie(netflixOriginals[num]);
   }, [netflixOriginals]);
   return (
-    <div className="relative h-screen w-full bg-hero-pattern from-gray-900/10 to-[#010511] pb-24 lg:h-[140vh]">
+    <div className="relative w-full pb-24">
       <Head>
         <title>Home | {APP_NAME}</title>
       </Head>

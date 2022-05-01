@@ -9,8 +9,8 @@ function Banner({ bannerMovie }: { bannerMovie: Movie | null }) {
   const image_url =
     bannerMovie?.backdrop_path || bannerMovie?.poster_path || "";
   return (
-    <section className="flex flex-col space-y-2 py-16 pl-4 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
-      <div className="absolute top-0 left-0 -z-10 h-[95vh] w-full">
+    <section className="flex h-full flex-col space-y-2 py-16 pl-4 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
+      <div className="absolute top-0 left-0 -z-10 h-[95vh] w-full bg-hero-pattern">
         <Image
           src={`${tmdbBaseUrl}${image_url}`}
           alt={title}
@@ -18,6 +18,7 @@ function Banner({ bannerMovie }: { bannerMovie: Movie | null }) {
           objectFit="cover"
         />
       </div>
+      <div className="absolute top-0 left-0 -z-10 h-[95vh] w-full bg-hero-pattern from-gray-900/10 to-[#010511]" />
       <h1 className="text-2xl font-bold md:text-4xl lg:text-7xl">{title}</h1>
       <p className="max-w-xs text-xs text-shadow-md line-clamp-4 md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl">
         {bannerMovie?.overview}
